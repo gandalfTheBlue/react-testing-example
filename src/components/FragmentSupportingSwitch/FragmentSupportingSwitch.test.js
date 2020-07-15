@@ -26,14 +26,24 @@ function TestComponent() {
 }
 
 describe("fragment supporting switch testing", () => {
-  test("full app rendering/navigating home page", () => {
+  test("loading home page by default", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <TestComponent />
+      </Router>
+    );
+    expect(container.innerHTML).toMatch("You are home");
+  });
+
+  test("navigating to about page", () => {
     const history = createMemoryHistory();
     const { container, getByText } = render(
       <Router history={history}>
         <TestComponent />
       </Router>
     );
-    expect(container.innerHTML).toMatch("You are home");
+
     userEvent.click(getByText(/about/i));
     expect(container.innerHTML).toMatch("You are on the about page");
   });
