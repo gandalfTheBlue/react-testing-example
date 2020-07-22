@@ -1,24 +1,33 @@
 import React from 'react'
+import i18n from '../../../../localization/i18n'
+import * as rk from '../../../../localization/resourceKeys'
+
 import './CancelNotification.css'
 
-const FlowMessages = {
-  'make payment flow': i18n.t(MAKE_A_PAYMENT.key),
-  'autopay enroll flow': i18n.t(AUTOPAY_ENROLL.key),
-  'add payment account flow': i18n.t(ADD_PAYMENT_ACCOUNT.key),
-}
-
 const CancelNotification = ({ flow }) => {
-  const flowMessage = FlowMessages[flow] || 18n.t(NO_FLOW.key)
+  //different flows:
+  //payment flow
+  //autopay
+  //add payment acct
+
+  const FlowMessages = {
+    makePaymentFlow: i18n.t(rk.TEXT_CANCEL_CONFIRMATION_INFO),
+    autopayEnrollFlow: i18n.t(rk.TEXT_CANCEL_CONFIRMATION_INFO),
+    addPaymentSccountFlow: i18n.t(rk.TEXT_CANCEL_CONFIRMATION_INFO),
+  }
+
+  const flowMessage = FlowMessages[flow]
 
   return (
     <div>
+      <div>{i18n.t(rk.TEXT_CANCEL_CONFIRMATION)}</div>
       <div>{flowMessage}</div>
     </div>
   )
 }
 
 CancelNotification.propTypes = {
-  flow: String,
+  //require one flow to id the flow
 }
 
 export default CancelNotification
