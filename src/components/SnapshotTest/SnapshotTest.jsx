@@ -1,4 +1,4 @@
-import Axios from 'axios'
+import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 
@@ -9,18 +9,17 @@ const SnapshotTest = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await Axios.get(
+      const result = await axios.get(
         `https://api.github.com/repos/ant-design/ant-design`
       )
-      setData(result)
-      console.log(55, result)
+      setData(result.data)
     }
     fetchData()
   }, [])
 
   if (!data) return <div>loading...</div>
 
-  return <div>{data.default_branch}</div>
+  return <div>{data.name}</div>
 }
 
 export default SnapshotTest

@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly SnapshotTest 1`] = `
+exports[`<SnapshotTest/> renders correctly SnapshotTest 1`] = `
 <div>
   loading...
+</div>
+`;
+
+exports[`<SnapshotTest/> renders correctly SnapshotTest after fetch data 1`] = `
+<div>
+  3333
 </div>
 `;
