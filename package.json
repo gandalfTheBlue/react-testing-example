@@ -29,6 +29,15 @@
     "semi": false,
     "singleQuote": true
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-react-jsx"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

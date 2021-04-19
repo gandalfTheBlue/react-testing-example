@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import CancelNotification from './CancelNotification'
-import i18n from '../../../../localization/i18n'
 import * as rk from '../../../../localization/resourceKeys'
+import i18n from '../../utils/i18n'
 
 describe('<CancelNotification/>', () => {
   test(' cancel tittle message is rendered', () => {
